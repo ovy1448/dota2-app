@@ -1,0 +1,6 @@
+#home_button {
+    margin: 15px;
+    &:hover {
+        filter: brightness(120%);
+    }
+}
