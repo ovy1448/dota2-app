@@ -19,3 +19,35 @@
         transform: translate(-50%,-50%);
     }
 }
+
+@mixin popper {
+    #arrow,
+    #arrow::before {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    z-index: -1;
+    }
+
+    #arrow::before {
+    content: '';
+    transform: rotate(45deg);
+    background: white;
+    }
+
+    #login_form[data-popper-placement^='top'] > #arrow {
+        bottom: -4px;
+    }
+
+    #login_form[data-popper-placement^='bottom'] > #arrow {
+        top: -4px;
+    }
+
+    #login_form[data-popper-placement^='left'] > #arrow {
+        right: -4px;
+    }
+
+    #login_form[data-popper-placement^='right'] > #arrow {
+        left: -4px;
+    }
+}

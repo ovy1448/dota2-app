@@ -27,13 +27,14 @@
 
 #search_div {
     flex: 1;
-    padding-left: calc(100vw - 100%);
+    /* padding-left: calc(100vw - 100%); */
+    max-width: 368px;
 }
 
 #search_result {
     color:white;
     background-color: rgba(32,32,32, .9);
-    /* width: 373px; */
+    max-width: 368px;
     max-height: 415px;
     border-radius: 5px;
 

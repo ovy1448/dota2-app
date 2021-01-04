@@ -4,3 +4,40 @@
         filter: brightness(120%);
     }
 }
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#user_login {
+    display: flex;
+    flex-direction: column;
+    /* position: absolute;
+    right: 0; */
+}
+
+#user_button {
+    background: transparent;
+    border: transparent;
+    color: rgb(144,144,144);
+    margin: 10px;
+    align-self: flex-end;
+    &:hover {
+        color: gray;
+    }
+    &:focus {
+        outline: none;
+        color: gray;
+    }
+}
+
+#login_form {
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+@include popper;

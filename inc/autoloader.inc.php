@@ -1,15 +1,11 @@
 <?php
-
-spl_autoload_register("myAutoLoader");
-
-    function myAutoLoader($className){
-        $path = "class/";
-        $ext = ".class.php";
-        $fullPath = $path.$className.$ext;
-
-        if(!file_exists($fullPath)){
-            return false;
+spl_autoload_register(function ($className){
+        if(file_exists('class/' . $className . ".class.php")){
+            require('class/' . $className . ".class.php");
+        } else {
+            require('class/abstract/' . $className . ".abstract.php");
         }
-
-        include_once $fullPath;
     }
+);
+
+    

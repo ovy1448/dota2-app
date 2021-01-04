@@ -1,7 +1,5 @@
 <?php
-    include "./inc/autoloader.inc.php";
-    include "./abstract/api.abstract.php";
-    include "./abstract/search_alg.abstract.php";
+    require "./inc/autoloader.inc.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,10 +17,23 @@
         <a href="http://localhost/dota2-app/index.php">
             <img id="home_button" src="home_button.png" alt="" >
         </a>
+        <div id="user_login">
+            <button id="user_button"><i class="fas fa-3x fa-user-circle"></i></button>
+            <form action="" id="login_form">
+                <input type="email" name="" id="" placeholder="E-Mail...">
+                <input type="text" placeholder="Password...">
+                <input type="text" placeholder="Password again...">
+                <button type="submit">Login</button>
+                <input type="button" id="register" value="Register">
+                <div id="arrow" data-popper-arrow></div>
+            </form>
+        </div>
     </header>
-    <div id="main_body">
+    <div id="top_body">
         <div id="sidebar">
-            K
+            <?php
+                $sidebar = new Sidebar;
+            ?>
         </div>
         <div id="search_div">
             <form action="index.php" method="GET" id="search_form">
@@ -31,12 +42,21 @@
             </form> 
             <div id="search_result">
                 <?php
-                $result = new Search; 
+                    $result = new Search; 
                 ?> 
             </div>
         </div>
+        <div id="right">
+            
+        </div>
     </div>
-    <script src="js/add_team.js"></script>
+    <div id="upcoming_matches">
+        <?php
+            $upcoming_matches = new Matches;
+        ?>
+    </div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="js/js.js"></script>
 </body>
 </html>
 
